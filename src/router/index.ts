@@ -28,8 +28,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/404.vue')
   }
 ];
+console.log('window.__MICRO_APP_BASE_ROUTE__', window.__MICRO_APP_BASE_ROUTE__);
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(
+    window.__MICRO_APP_BASE_ROUTE__ || process.env.BASE_URL
+  ),
   routes
 });
 

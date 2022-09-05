@@ -13,8 +13,15 @@ const IconsResolver = require('unplugin-icons/resolver');
 const { FileSystemIconLoader } = require('unplugin-icons/loaders');
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: '/',
+  publicPath: '/child/first/',
+  outputDir: 'dist/child/first',
   productionSourceMap: process.env.NODE_ENV !== 'production',
+  devServer: {
+    port: 8010,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  },
   configureWebpack: {
     resolve: {
       alias: {

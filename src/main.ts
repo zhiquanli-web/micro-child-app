@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import 'normalize.css';
 import '@/assets/styles/index.scss';
 import 'ant-design-vue/dist/antd.css';
+import './public-path';
 
 import App from './App.vue';
 import router from './router';
